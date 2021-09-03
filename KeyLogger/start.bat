@@ -1,3 +1,2 @@
 @echo off
-set currentpath=%cd%
-wscript.exe "%currentpath%\inv.vbs" "%currentpath%\runner.bat"
+wscript.exe "%cd%\inv.vbs" "%cd%\runner.bat"
