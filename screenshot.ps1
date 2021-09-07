@@ -6,10 +6,10 @@ function screenshot()
   Add-type -AssemblyName System.Drawing
   # Gather Screen resolution information
   $Screen = [System.Windows.Forms.SystemInformation]::VirtualScreen
-  $Width = $Screen.Width - 200
-  $Height = $Screen.Height - 100
-  $Left = $Screen.Left + 200
-  $Top = $Screen.Top + 100
+  $Width = $Screen.Width - 400
+  $Height = $Screen.Height - 300
+  $Left = $Screen.Left + 400
+  $Top = $Screen.Top + 300
   # Create bitmap using the top-left and bottom-right bounds
   $bitmap = New-Object System.Drawing.Bitmap $Width, $Height
   # Create Graphics object
