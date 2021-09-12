@@ -1,4 +1,5 @@
 @echo off
+reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /f
 cd %temp%
 if not exist t\ (
   mkdir t
